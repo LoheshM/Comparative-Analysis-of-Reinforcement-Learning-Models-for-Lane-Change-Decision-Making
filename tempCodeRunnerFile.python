@@ -1,0 +1,70 @@
+class Customer:
+    def __init__(self, name, pickup_time, weight):
+        self.name = name
+        self.pickup_time = pickup_time
+        self.weight = weight
+
+class Driver:
+    def __init__(self, name, weight_capacity):
+        self.name = name
+        self.weight_capacity = weight_capacity
+        self.collected_clothes = []
+
+class LaundryService:
+    def __init__(self):
+        self.customers = []
+        self.drivers = []
+
+    def add_customer(self, name, pickup_time, weight):
+        customer = Customer(name, pickup_time, weight)
+        self.customers.append(customer)
+
+    def add_driver(self, name, weight_capacity):
+        driver = Driver(name, weight_capacity)
+        self.drivers.append(driver)
+
+    def schedule_pickups(self):
+        # Sort customers by pickup time
+        self.customers.sort(key=lambda x: x.pickup_time)
+
+        for customer in self.customers:
+            assigned_driver = None
+
+            for driver in self.drivers:
+                if driver.weight_capacity >= customer.weight:
+                    assigned_driver = driver
+                    break
+
+            if assigned_driver:
+                assigned_driver.collected_clothes.append(customer)
+            else:
+                print(f"No available driver found for customer {customer.name}")
+
+    def redistribute_weight(self):
+        common_point = Driver("Common Point", float("inf"))  # Common point with unlimited weight capacity
+
+        for driver in self.drivers:
+            common_point.collected_clothes.extend(driver.collected_clothes)
+            driver.collected_clothes = []
+
+        print("Redistributed clothes to Common Point:")
+        for customer in common_point.collected_clothes:
+            print(f"Customer: {customer.name}, Weight: {customer.weight}")
+
+# Example usage
+service = LaundryService()
+
+# Add customers
+service.add_customer("Customer 1", pickup_time=1, weight=10)
+service.add_customer("Customer 2", pickup_time=2, weight=15)
+service.add_customer("Customer 3", pickup_time=3, weight=8)
+
+# Add drivers
+service.add_driver("Driver 1", weight_capacity=20)
+service.add_driver("Driver 2", weight_capacity=15)
+
+# Schedule pickups
+service.schedule_pickups()
+
+# Redistribute weight to common point
+service.redistribute_weight()
