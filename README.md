@@ -21,6 +21,7 @@ Grid Creation and Actor Analysis: Representing the environment and analyzing sur
 State Representation: Extracting relevant information for decision-making.
 Traffic Manager Initialization: Configuring traffic scenarios.
 Action Execution and Reward Calculation: Selecting actions and computing rewards.
+![image](https://github.com/LoheshM/Comparative-Analysis-of-Reinforcement-Learning-Models-for-Lane-Change-Decision-Making/assets/116341584/7635bae4-3f7a-4e16-9cfd-ab551e719a38)
 
 Dynamic Vehicle Spawning: Introducing variability in traffic conditions.
 Termination and Episode Handling: Monitoring episode completion criteria.
@@ -37,6 +38,7 @@ Key tools utilized include CARLA simulator, Python, TensorFlow, Keras, OpenCV, a
 Results
 
 The results compare the performance of DQN, Double DQN, and Dueling Double DQN models. The Double DQN model demonstrated consistent and smooth lane changes, while the Dueling Double DQN model surpassed others in challenging scenarios.
+
 DQN Model
 ![image](https://github.com/LoheshM/Comparative-Analysis-of-Reinforcement-Learning-Models-for-Lane-Change-Decision-Making/assets/116341584/69c617d8-3455-40e7-bf09-8acfa2ead2f7)
 
