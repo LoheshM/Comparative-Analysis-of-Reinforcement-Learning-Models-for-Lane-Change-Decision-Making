@@ -18,17 +18,25 @@ Environment Setup: Initializing simulation variables and configurations.
 ![image](https://github.com/LoheshM/Comparative-Analysis-of-Reinforcement-Learning-Models-for-Lane-Change-Decision-Making/assets/116341584/60e59f5e-bc55-4f44-bcc8-5ee53235ebaf)
 
 Grid Creation and Actor Analysis: Representing the environment and analyzing surrounding traffic.
+
 State Representation: Extracting relevant information for decision-making.
+
 Traffic Manager Initialization: Configuring traffic scenarios.
+
 Action Execution and Reward Calculation: Selecting actions and computing rewards.
 ![image](https://github.com/LoheshM/Comparative-Analysis-of-Reinforcement-Learning-Models-for-Lane-Change-Decision-Making/assets/116341584/7635bae4-3f7a-4e16-9cfd-ab551e719a38)
 
 Dynamic Vehicle Spawning: Introducing variability in traffic conditions.
+
 Termination and Episode Handling: Monitoring episode completion criteria.
+![image](https://github.com/LoheshM/Comparative-Analysis-of-Reinforcement-Learning-Models-for-Lane-Change-Decision-Making/assets/116341584/6ad5fec3-3098-4345-997c-b5b8a1484912)
 
 Position Calculation: Determining the vehicle's position.
+
 Learning and Decision-Making: Training RL agents.
+
 Evaluation and Performance Metrics: Assessing agent performance using various metrics.
+
 The implementation involves developing DQN, Double DQN, and Dueling Double DQN models using Python, TensorFlow, and Keras. Each model undergoes iterative training and evaluation in the CARLA simulator environment.
 
 Tools Used
